@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Rethink_Sans } from "next/font/google";
 import "./globals.css";
+import ResponsiveNav from "@/components/navbar/ResponsiveNav";
 
 const rethinkSans = Rethink_Sans({
   weight: ["400", "500", "600", "700"],
@@ -15,9 +16,8 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en">
-      <body
-        className={`${rethinkSans.className} antialiased`}
-      >
+      <body className={`${rethinkSans.className} antialiased`}>
+        <ResponsiveNav />
         {children}
       </body>
     </html>
