@@ -15,10 +15,13 @@ export default function Navbar({ openNav }: IProps) {
 
   useEffect(() => {
     const handler = () => {
-      if (window.scrollY >= 90) setNavBg(true)
-      if (window.scrollY < 90) setNavBg(false)        
-      // console.log('scrollY:', window.scrollY)
-    }    
+      if (window.scrollY >= 90) {
+        setNavBg(true)
+      } 
+      else {
+        setNavBg(false)
+      }
+    }     
 
     window.addEventListener('scroll', handler)
 
@@ -26,7 +29,7 @@ export default function Navbar({ openNav }: IProps) {
   }, [])
 
   return (
-    <div className={`transition-all duration-200 h-[12vh] z-[100] fixed w-full ${navBg ? 'bg-white shadow-md' : 'fixed'}`}>
+    <div className={`transition-all duration-200 h-[8vh] z-[100] fixed w-full ${navBg ? 'bg-white shadow-md' : 'bg-white'}`}>
       <div className="flex items-center justify-between h-full w-[90%] xl:w-[80%] mx-auto">
         <div className="flex items-center space-x-2">
           <div className="flex items-center justify-center w-10 h-10 bg-blue-800 rounded-full">
